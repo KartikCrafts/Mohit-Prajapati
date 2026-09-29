@@ -40,30 +40,29 @@ export const CaseStudiesSection: React.FC<CaseStudiesSectionProps> = ({ onOpenBo
                 duration={0.65}
               >
                 <div
-                  className="rounded-3xl bg-[#EFE3D5] border border-[#DFCAB4] overflow-hidden p-6 sm:p-8 lg:p-10 transition-all hover:shadow-lg"
+                  className="group rounded-3xl bg-[#EFE3D5] hover:bg-[#FAF4EC] border border-[#DFCAB4] hover:border-[#8C6246]/70 overflow-hidden p-6 sm:p-8 lg:p-10 transition-all duration-500 hover:shadow-2xl hover:-translate-y-1.5"
                 >
                   <div className={`grid grid-cols-1 lg:grid-cols-12 gap-8 items-center ${isReversed ? 'lg:flex-row-reverse' : ''}`}>
                     
                     {/* Visual Preview Slot with Fallback Container */}
                     <div className={`lg:col-span-6 ${isReversed ? 'lg:order-2' : 'lg:order-1'}`}>
-                      <div className="relative rounded-2xl overflow-hidden aspect-4/3 bg-[#E2D2C0] border border-[#D5C1AE] shadow-inner group">
+                      <div className="relative rounded-2xl overflow-hidden aspect-4/3 bg-[#E2D2C0] border border-[#D5C1AE] group-hover:border-[#8C6246]/50 shadow-inner group/img transition-all duration-300">
                         <img
                           src={study.image}
                           alt={study.title}
-                          referrerPolicy="no-referrer"
-                          className="w-full h-full object-cover group-hover:scale-103 transition-transform duration-500"
+                          className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-106 group-hover:brightness-105"
                           onError={(e) => {
                             const target = e.currentTarget;
                             target.style.display = 'none';
                           }}
                         />
-                        <div className="absolute inset-0 bg-gradient-to-t from-[#221D1A]/70 via-transparent to-transparent pointer-events-none" />
+                        <div className="absolute inset-0 bg-gradient-to-t from-[#221D1A]/80 via-transparent to-transparent pointer-events-none transition-opacity duration-300 group-hover:opacity-90" />
                         
-                        <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between text-white text-xs">
-                          <span className="font-medium bg-[#221D1A]/60 backdrop-blur-xs px-2.5 py-1 rounded-md">
+                        <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between text-white text-xs transform transition-transform duration-300 group-hover:translate-y-[-2px]">
+                          <span className="font-medium bg-[#221D1A]/70 backdrop-blur-xs px-2.5 py-1 rounded-md border border-white/10 shadow-xs">
                             Client: {study.client}
                           </span>
-                          <span className="font-mono text-[#E5D3BE]">
+                          <span className="font-mono text-[#E5D3BE] font-semibold">
                             {study.category}
                           </span>
                         </div>
@@ -78,7 +77,7 @@ export const CaseStudiesSection: React.FC<CaseStudiesSectionProps> = ({ onOpenBo
                           {study.category}
                         </div>
                         
-                        <h3 className="font-display text-2xl sm:text-3xl font-bold text-[#221D1A] leading-snug">
+                        <h3 className="font-display text-2xl sm:text-3xl font-bold text-[#221D1A] group-hover:text-[#8C6246] transition-colors duration-300 leading-snug">
                           {study.title}
                         </h3>
 
@@ -87,9 +86,9 @@ export const CaseStudiesSection: React.FC<CaseStudiesSectionProps> = ({ onOpenBo
                         </p>
 
                         {/* Quantified Metrics Adjacent to Claims (Mandatory Rule) */}
-                        <div className="mt-6 grid grid-cols-3 gap-3 p-4 rounded-xl bg-[#FAF5EE] border border-[#E4D5C5]">
+                        <div className="mt-6 grid grid-cols-3 gap-3 p-4 rounded-xl bg-[#FAF5EE] group-hover:bg-[#FFFDF9] border border-[#E4D5C5] group-hover:border-[#D5C0AB] transition-all duration-300">
                           {study.results.map((res, rIdx) => (
-                            <div key={rIdx} className="text-center">
+                            <div key={rIdx} className="text-center p-1.5 rounded-lg transition-all duration-200 hover:bg-[#F2E5D7] hover:scale-105">
                               <div className="font-display text-lg sm:text-xl font-extrabold text-[#221D1A] tabular-nums">
                                 {res.value}
                               </div>
@@ -110,10 +109,10 @@ export const CaseStudiesSection: React.FC<CaseStudiesSectionProps> = ({ onOpenBo
 
                         <button
                           onClick={() => onOpenBooking(study.title)}
-                          className="flex items-center gap-1.5 px-4 py-2 text-xs font-semibold text-white bg-[#2A1F18] hover:bg-[#3D2E24] rounded-lg transition-colors cursor-pointer"
+                          className="flex items-center gap-1.5 px-4 py-2.5 text-xs font-semibold text-white bg-[#2A1F18] hover:bg-[#8C6246] rounded-xl transition-all duration-200 hover:shadow-md hover:scale-105 active:scale-95 cursor-pointer"
                         >
                           <span>Build Similar Project</span>
-                          <ArrowUpRight className="w-3.5 h-3.5" />
+                          <ArrowUpRight className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                         </button>
                       </div>
 

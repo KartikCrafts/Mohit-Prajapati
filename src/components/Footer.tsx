@@ -51,21 +51,21 @@ export const Footer: React.FC = () => {
                   href="https://wa.me/919876543210?text=Hi%20Mohit"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-8 h-8 rounded-lg bg-[#3B2C23] hover:bg-[#4E3A2F] flex items-center justify-center text-[#2E7D32] transition-colors"
+                  className="w-9 h-9 rounded-lg bg-[#3B2C23] hover:bg-[#2E7D32]/20 hover:border hover:border-[#2E7D32]/40 flex items-center justify-center text-[#2E7D32] transition-all duration-300 hover:scale-110 active:scale-90 shadow-xs hover:shadow-md"
                   aria-label="WhatsApp"
                 >
                   <MessageSquare className="w-4 h-4" />
                 </a>
                 <a
                   href="mailto:mohit.prajapati@techstudio.dev"
-                  className="w-8 h-8 rounded-lg bg-[#3B2C23] hover:bg-[#4E3A2F] flex items-center justify-center text-[#EFE3D5] transition-colors"
+                  className="w-9 h-9 rounded-lg bg-[#3B2C23] hover:bg-[#8C6246]/20 hover:border hover:border-[#8C6246]/40 flex items-center justify-center text-[#EFE3D5] hover:text-[#D4BFA9] transition-all duration-300 hover:scale-110 active:scale-90 shadow-xs hover:shadow-md"
                   aria-label="Email"
                 >
                   <Mail className="w-4 h-4" />
                 </a>
                 <a
                   href="tel:+919876543210"
-                  className="w-8 h-8 rounded-lg bg-[#3B2C23] hover:bg-[#4E3A2F] flex items-center justify-center text-[#EFE3D5] transition-colors"
+                  className="w-9 h-9 rounded-lg bg-[#3B2C23] hover:bg-[#8C6246]/20 hover:border hover:border-[#8C6246]/40 flex items-center justify-center text-[#EFE3D5] hover:text-[#D4BFA9] transition-all duration-300 hover:scale-110 active:scale-90 shadow-xs hover:shadow-md"
                   aria-label="Phone"
                 >
                   <Phone className="w-4 h-4" />
@@ -79,12 +79,12 @@ export const Footer: React.FC = () => {
                 Core Capabilities
               </h4>
               <ul className="space-y-2 text-xs text-[#A89687]">
-                <li><a href="#services" className="hover:text-white transition-colors">Web & Mobile Apps</a></li>
-                <li><a href="#services" className="hover:text-white transition-colors">UI/UX & Website Design</a></li>
-                <li><a href="#services" className="hover:text-white transition-colors">Power BI & Excel Dashboards</a></li>
-                <li><a href="#services" className="hover:text-white transition-colors">Data Analysis & SQL Pipelines</a></li>
-                <li><a href="#services" className="hover:text-white transition-colors">ATS Resume & Portfolio Sites</a></li>
-                <li><a href="#services" className="hover:text-white transition-colors">MVP Prototyping & DevOps</a></li>
+                <li><a href="#services" className="hover:text-white hover:translate-x-1 inline-block transition-all">Web & Mobile Apps</a></li>
+                <li><a href="#services" className="hover:text-white hover:translate-x-1 inline-block transition-all">UI/UX & Website Design</a></li>
+                <li><a href="#services" className="hover:text-white hover:translate-x-1 inline-block transition-all">Power BI & Excel Dashboards</a></li>
+                <li><a href="#services" className="hover:text-white hover:translate-x-1 inline-block transition-all">Data Analysis & SQL Pipelines</a></li>
+                <li><a href="#services" className="hover:text-white hover:translate-x-1 inline-block transition-all">ATS Resume & Portfolio Sites</a></li>
+                <li><a href="#services" className="hover:text-white hover:translate-x-1 inline-block transition-all">MVP Prototyping & DevOps</a></li>
               </ul>
             </div>
 

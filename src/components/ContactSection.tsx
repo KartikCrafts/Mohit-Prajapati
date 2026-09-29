@@ -62,9 +62,9 @@ export const ContactSection: React.FC = () => {
                   href="https://wa.me/919876543210?text=Hi%20Mohit,%20I%20would%20like%20to%20discuss%20a%20project."
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-4 p-4 rounded-2xl bg-[#EFE3D5] hover:bg-[#E9DAC8] border border-[#DFCAB4] transition-all group"
+                  className="flex items-center gap-4 p-4 rounded-2xl bg-[#EFE3D5] hover:bg-[#FAF4EC] border border-[#DFCAB4] hover:border-[#2E7D32]/60 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 group"
                 >
-                  <div className="w-12 h-12 rounded-xl bg-[#2E7D32]/10 border border-[#2E7D32]/20 flex items-center justify-center text-[#2E7D32] shrink-0">
+                  <div className="w-12 h-12 rounded-xl bg-[#2E7D32]/10 border border-[#2E7D32]/20 flex items-center justify-center text-[#2E7D32] shrink-0 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6">
                     <MessageSquare className="w-6 h-6" />
                   </div>
                   <div>
@@ -82,9 +82,9 @@ export const ContactSection: React.FC = () => {
 
                 <a
                   href="mailto:mohit.prajapati@techstudio.dev?subject=Project%20Inquiry%20for%20Mohit%20Prajapati"
-                  className="flex items-center gap-4 p-4 rounded-2xl bg-[#EFE3D5] hover:bg-[#E9DAC8] border border-[#DFCAB4] transition-all group"
+                  className="flex items-center gap-4 p-4 rounded-2xl bg-[#EFE3D5] hover:bg-[#FAF4EC] border border-[#DFCAB4] hover:border-[#8C6246]/70 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 group"
                 >
-                  <div className="w-12 h-12 rounded-xl bg-[#8C6246]/10 border border-[#8C6246]/20 flex items-center justify-center text-[#8C6246] shrink-0">
+                  <div className="w-12 h-12 rounded-xl bg-[#8C6246]/10 border border-[#8C6246]/20 flex items-center justify-center text-[#8C6246] shrink-0 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6">
                     <Mail className="w-6 h-6" />
                   </div>
                   <div>
@@ -100,8 +100,8 @@ export const ContactSection: React.FC = () => {
                   </div>
                 </a>
 
-                <div className="flex items-center gap-4 p-4 rounded-2xl bg-[#EFE3D5] border border-[#DFCAB4]">
-                  <div className="w-12 h-12 rounded-xl bg-[#2A1F18]/10 border border-[#2A1F18]/20 flex items-center justify-center text-[#2A1F18] shrink-0">
+                <div className="flex items-center gap-4 p-4 rounded-2xl bg-[#EFE3D5] hover:bg-[#FAF4EC] border border-[#DFCAB4] hover:border-[#8C6246]/70 transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5 group">
+                  <div className="w-12 h-12 rounded-xl bg-[#2A1F18]/10 border border-[#2A1F18]/20 flex items-center justify-center text-[#2A1F18] shrink-0 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6">
                     <Clock className="w-6 h-6" />
                   </div>
                   <div>
@@ -123,7 +123,7 @@ export const ContactSection: React.FC = () => {
           {/* Right: Interactive Form (7 cols) */}
           <div className="lg:col-span-7">
             <ScrollReveal direction="left" delay={0.15}>
-              <div className="rounded-3xl bg-[#EFE3D5] border border-[#DFCAB4] p-7 sm:p-9 shadow-md">
+              <div className="rounded-3xl bg-[#EFE3D5] hover:bg-[#FAF4EC] border border-[#DFCAB4] hover:border-[#8C6246]/60 p-7 sm:p-9 shadow-md hover:shadow-2xl transition-all duration-300">
               
               {submitted ? (
                 <div className="py-8 text-center space-y-4">
@@ -285,9 +285,9 @@ export const ContactSection: React.FC = () => {
                   <div className="pt-2 flex flex-col sm:flex-row items-center gap-3">
                     <button
                       type="submit"
-                      className="w-full sm:w-auto flex-1 flex items-center justify-center gap-2 py-3 px-6 text-xs font-semibold text-white bg-[#2A1F18] hover:bg-[#3D2E24] rounded-xl shadow-md transition-all cursor-pointer"
+                      className="w-full sm:w-auto flex-1 flex items-center justify-center gap-2 py-3 px-6 text-xs font-semibold text-white bg-[#2A1F18] hover:bg-[#8C6246] rounded-xl shadow-md hover:shadow-xl hover:scale-[1.01] active:scale-[0.98] transition-all duration-300 cursor-pointer"
                     >
-                      <Send className="w-3.5 h-3.5" />
+                      <Send className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-0.5" />
                       <span>Submit Inquiry to Mohit</span>
                     </button>
 
@@ -295,7 +295,7 @@ export const ContactSection: React.FC = () => {
                       href={whatsappInquiryUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-full sm:w-auto flex items-center justify-center gap-2 py-3 px-5 text-xs font-semibold text-[#221D1A] bg-[#FAF5EE] hover:bg-white border border-[#D5C1AE] rounded-xl transition-colors whitespace-nowrap"
+                      className="w-full sm:w-auto flex items-center justify-center gap-2 py-3 px-5 text-xs font-semibold text-[#221D1A] bg-[#FAF5EE] hover:bg-white border border-[#D5C1AE] hover:border-[#2E7D32]/60 hover:shadow-xs rounded-xl transition-all duration-200 whitespace-nowrap"
                     >
                       <MessageSquare className="w-4 h-4 text-[#2E7D32]" />
                       <span>Send Direct via WhatsApp</span>

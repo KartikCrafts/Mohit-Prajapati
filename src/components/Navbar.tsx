@@ -87,7 +87,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
             href="https://wa.me/919876543210?text=Hi%20Mohit,%20I%20am%20interested%20in%20discussing%20a%20project%20with%20you."
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold text-[#3C3026] bg-[#EAE0D3] hover:bg-[#E2D4C3] border border-[#D8C5B2] rounded-lg transition-colors whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#8C6246]"
+            className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold text-[#3C3026] bg-[#EAE0D3] hover:bg-[#E2D4C3] border border-[#D8C5B2] hover:border-[#2E7D32]/50 hover:shadow-xs rounded-lg transition-all duration-200 hover:scale-105 active:scale-95 whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#8C6246]"
             aria-label="Direct WhatsApp Message"
           >
             <MessageSquare className="w-3.5 h-3.5 text-[#2E7D32]" />
@@ -96,10 +96,10 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
 
           <button
             onClick={() => onOpenBooking()}
-            className="flex items-center gap-1.5 px-3.5 py-1.5 text-xs font-semibold text-white bg-[#2A1F18] hover:bg-[#3D2E24] rounded-lg transition-all shadow-xs hover:shadow-sm whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2A1F18] cursor-pointer"
+            className="flex items-center gap-1.5 px-3.5 py-1.5 text-xs font-semibold text-white bg-[#2A1F18] hover:bg-[#8C6246] rounded-lg transition-all duration-200 shadow-xs hover:shadow-md hover:scale-105 active:scale-95 whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2A1F18] cursor-pointer"
           >
             <span>Book Consultation</span>
-            <ArrowUpRight className="w-3.5 h-3.5" />
+            <ArrowUpRight className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
           </button>
         </div>
 

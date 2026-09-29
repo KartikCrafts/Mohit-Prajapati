@@ -135,15 +135,15 @@ export const EstimatorSection: React.FC<EstimatorSectionProps> = ({ onOpenBookin
                   <div
                     key={mod.id}
                     onClick={() => toggleModule(mod.id)}
-                    className={`h-full p-4 rounded-xl border transition-all cursor-pointer select-none flex flex-col justify-between ${
+                    className={`group/mod h-full p-4 rounded-xl border transition-all duration-200 cursor-pointer select-none flex flex-col justify-between hover:-translate-y-1 hover:shadow-lg ${
                       isSelected
-                        ? 'bg-[#EBDBC9] border-[#8C6246] shadow-xs'
-                        : 'bg-[#FAF5EE] hover:bg-[#F2E5D7] border-[#DFCAB4]'
+                        ? 'bg-[#EBDBC9] border-[#8C6246] shadow-sm ring-1 ring-[#8C6246]/40'
+                        : 'bg-[#FAF5EE] hover:bg-[#FFFDF9] border-[#DFCAB4] hover:border-[#8C6246]/60'
                     }`}
                   >
                     <div className="flex items-start justify-between gap-3">
                       <div>
-                        <h4 className="text-sm font-bold text-[#221D1A] leading-snug">
+                        <h4 className="text-sm font-bold text-[#221D1A] group-hover/mod:text-[#8C6246] transition-colors leading-snug">
                           {mod.name}
                         </h4>
                         <p className="text-xs text-[#615144] mt-1 leading-relaxed">
@@ -152,10 +152,10 @@ export const EstimatorSection: React.FC<EstimatorSectionProps> = ({ onOpenBookin
                       </div>
 
                       <div
-                        className={`w-5 h-5 rounded-md flex items-center justify-center shrink-0 border transition-colors ${
+                        className={`w-5 h-5 rounded-md flex items-center justify-center shrink-0 border transition-all duration-200 group-hover/mod:scale-110 ${
                           isSelected
                             ? 'bg-[#2A1F18] border-[#2A1F18] text-white'
-                            : 'border-[#CBB5A0] bg-white'
+                            : 'border-[#CBB5A0] bg-white group-hover/mod:border-[#8C6246]'
                         }`}
                       >
                         {isSelected && <Check className="w-3.5 h-3.5 stroke-[3]" />}
@@ -210,7 +210,7 @@ export const EstimatorSection: React.FC<EstimatorSectionProps> = ({ onOpenBookin
 
           {/* Right: Live Scope Summary Card (5 cols) - Smooth fixed/sticky anchor without transform jumps */}
           <div className="lg:col-span-5 lg:sticky lg:top-24 self-start">
-            <div className="rounded-2xl bg-[#EFE3D5] border border-[#DFCAB4] p-6 sm:p-7 shadow-lg space-y-6">
+            <div className="rounded-2xl bg-[#EFE3D5] hover:bg-[#FAF4EC] border border-[#DFCAB4] hover:border-[#8C6246]/60 p-6 sm:p-7 shadow-lg hover:shadow-2xl transition-all duration-300 space-y-6">
                 
                 <div className="flex items-center justify-between pb-4 border-b border-[#DFCAB4]">
                   <div>
@@ -221,7 +221,7 @@ export const EstimatorSection: React.FC<EstimatorSectionProps> = ({ onOpenBookin
                       Instant estimate based on selected deliverables
                     </p>
                   </div>
-                  <Layers className="w-5 h-5 text-[#8C6246]" />
+                  <Layers className="w-5 h-5 text-[#8C6246] transition-transform duration-300 hover:rotate-12" />
                 </div>
 
                 {/* Selected List */}
@@ -236,7 +236,7 @@ export const EstimatorSection: React.FC<EstimatorSectionProps> = ({ onOpenBookin
                   ) : (
                     <ul className="space-y-2 text-xs text-[#2A1F18] max-h-48 overflow-y-auto pr-1">
                       {selectedModules.map((m) => (
-                        <li key={m.id} className="flex items-center justify-between bg-[#FAF5EE] px-3 py-2 rounded-lg border border-[#E4D5C5]">
+                        <li key={m.id} className="flex items-center justify-between bg-[#FAF5EE] hover:bg-[#FFFDF9] hover:border-[#8C6246]/50 hover:translate-x-0.5 px-3 py-2 rounded-lg border border-[#E4D5C5] transition-all duration-200">
                           <span className="font-medium truncate max-w-[70%]">{m.name}</span>
                           <span className="font-mono text-[#786659]">~{m.baseDays}d</span>
                         </li>
@@ -246,11 +246,11 @@ export const EstimatorSection: React.FC<EstimatorSectionProps> = ({ onOpenBookin
                 </div>
 
                 {/* Estimated Timeline Display */}
-                <div className="p-4 rounded-xl bg-[#FAF5EE] border border-[#DFCAB4] text-center">
+                <div className="p-4 rounded-xl bg-[#FAF5EE] hover:bg-[#FFFDF9] border border-[#DFCAB4] hover:border-[#8C6246]/50 text-center transition-all duration-300 hover:shadow-md">
                   <div className="text-xs font-medium text-[#6B5A4D]">
                     Estimated Delivery Timeline
                   </div>
-                  <div className="font-display text-3xl font-extrabold text-[#221D1A] my-1 tabular-nums">
+                  <div className="font-display text-3xl font-extrabold text-[#221D1A] my-1 tabular-nums transition-transform duration-300 hover:scale-105">
                     {totalDays === 0 ? '—' : `${totalDays} Business Days`}
                   </div>
                   <div className="text-[11px] text-[#7A695C]">
@@ -263,17 +263,17 @@ export const EstimatorSection: React.FC<EstimatorSectionProps> = ({ onOpenBookin
                   <button
                     disabled={selectedModules.length === 0}
                     onClick={() => onOpenBookingWithScope(scopeSummaryText)}
-                    className="w-full flex items-center justify-center gap-2 py-3 px-4 text-xs font-semibold text-white bg-[#2A1F18] hover:bg-[#3D2E24] disabled:bg-[#B3A090] rounded-xl transition-all shadow-md cursor-pointer disabled:cursor-not-allowed"
+                    className="w-full flex items-center justify-center gap-2 py-3 px-4 text-xs font-semibold text-white bg-[#2A1F18] hover:bg-[#3D2E24] disabled:bg-[#B3A090] rounded-xl transition-all duration-300 shadow-md hover:shadow-xl hover:scale-[1.01] active:scale-[0.98] cursor-pointer disabled:cursor-not-allowed"
                   >
                     <span>Lock In Quote & Schedule Kickoff</span>
-                    <ArrowRight className="w-3.5 h-3.5" />
+                    <ArrowRight className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-0.5" />
                   </button>
 
                   <a
                     href={`https://wa.me/919876543210?text=${whatsappMessage}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-full flex items-center justify-center gap-2 py-2.5 px-4 text-xs font-semibold text-[#221D1A] bg-[#FAF5EE] hover:bg-white border border-[#D5C1AE] rounded-xl transition-colors"
+                    className="w-full flex items-center justify-center gap-2 py-2.5 px-4 text-xs font-semibold text-[#221D1A] bg-[#FAF5EE] hover:bg-white border border-[#D5C1AE] hover:border-[#8C6246]/60 hover:shadow-xs rounded-xl transition-all duration-200"
                   >
                     <MessageSquare className="w-4 h-4 text-[#2E7D32]" />
                     <span>Send Estimate to Mohit on WhatsApp</span>

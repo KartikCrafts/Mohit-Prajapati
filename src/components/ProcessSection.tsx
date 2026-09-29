@@ -69,21 +69,21 @@ export const ProcessSection: React.FC = () => {
                 className="h-full"
               >
                 <div
-                  className="h-full relative rounded-2xl bg-[#EFE3D5] border border-[#DFCAB4] p-6 sm:p-7 flex flex-col justify-between hover:bg-[#E9DAC8] transition-colors"
+                  className="group h-full relative rounded-2xl bg-[#EFE3D5] hover:bg-[#FAF4EC] border border-[#DFCAB4] hover:border-[#8C6246]/70 p-6 sm:p-7 flex flex-col justify-between transition-all duration-300 hover:shadow-xl hover:-translate-y-1.5"
                 >
                   <div>
                     
                     {/* Step Index & Icon */}
                     <div className="flex items-center justify-between mb-6">
-                      <span className="font-display text-2xl font-extrabold text-[#8C6246] tabular-nums">
+                      <span className="font-display text-2xl font-extrabold text-[#8C6246] tabular-nums transition-transform duration-300 group-hover:scale-110 inline-block">
                         {item.step}
                       </span>
-                      <div className="w-10 h-10 rounded-xl bg-[#FAF5EE] border border-[#DFCAB4] flex items-center justify-center text-[#2A1F18]">
-                        <Icon className="w-5 h-5 text-[#8C6246]" />
+                      <div className="w-10 h-10 rounded-xl bg-[#FAF5EE] group-hover:bg-[#EBD8C3] border border-[#DFCAB4] group-hover:border-[#8C6246] flex items-center justify-center text-[#2A1F18] transition-all duration-300 group-hover:scale-110 group-hover:rotate-6">
+                        <Icon className="w-5 h-5 text-[#8C6246] transition-transform duration-300 group-hover:scale-110" />
                       </div>
                     </div>
 
-                    <h3 className="font-display text-lg font-bold text-[#221D1A] leading-snug">
+                    <h3 className="font-display text-lg font-bold text-[#221D1A] group-hover:text-[#8C6246] transition-colors leading-snug">
                       {item.title}
                     </h3>
                     

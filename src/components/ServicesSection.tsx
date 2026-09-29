@@ -258,13 +258,13 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onSelectServic
                   className="h-full flex flex-col"
                 >
                   <div
-                    className="h-full group relative flex flex-col justify-between rounded-2xl bg-[#EFE3D5] hover:bg-[#E9DAC8] border border-[#DFCAB4] hover:border-[#CDB299] p-6 transition-all duration-200 hover:shadow-md"
+                    className="h-full group relative flex flex-col justify-between rounded-2xl bg-[#EFE3D5] hover:bg-[#FAF4EC] border border-[#DFCAB4] hover:border-[#8C6246]/70 p-6 transition-all duration-300 hover:shadow-xl hover:-translate-y-1.5"
                   >
                     <div>
                       
                       {/* Unboxed clean metadata (Zero-Pill discipline) */}
                       <div className="flex items-center justify-between text-xs text-[#6B5A4D] mb-3">
-                        <span className="font-medium text-[#8C6246]">
+                        <span className="font-medium text-[#8C6246] transition-colors group-hover:text-[#6F472E]">
                           {service.categoryLabel}
                         </span>
                         <span className="flex items-center gap-1 font-mono text-[11px] text-[#786659]">
@@ -274,7 +274,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onSelectServic
                       </div>
 
                       {/* Card Title */}
-                      <h3 className="font-display text-xl font-bold text-[#221D1A] group-hover:text-[#171311] transition-colors leading-snug">
+                      <h3 className="font-display text-xl font-bold text-[#221D1A] group-hover:text-[#8C6246] transition-colors leading-snug">
                         {service.title}
                       </h3>
 
@@ -312,7 +312,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onSelectServic
                       <div className="flex items-center gap-2">
                         <button
                           onClick={() => setSelectedServiceModal(service)}
-                          className="px-2.5 py-1.5 text-xs font-medium text-[#221D1A] hover:bg-[#DFCAB4]/60 rounded-md transition-colors whitespace-nowrap cursor-pointer"
+                          className="px-2.5 py-1.5 text-xs font-medium text-[#221D1A] hover:bg-[#DFCAB4]/60 rounded-md transition-all hover:scale-105 active:scale-95 whitespace-nowrap cursor-pointer"
                           title="View complete specifications"
                         >
                           Details
@@ -320,10 +320,10 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onSelectServic
 
                         <button
                           onClick={() => onSelectService(service.title)}
-                          className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold text-white bg-[#2A1F18] hover:bg-[#3D2E24] rounded-lg transition-colors whitespace-nowrap cursor-pointer shadow-xs"
+                          className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold text-white bg-[#2A1F18] hover:bg-[#8C6246] rounded-lg transition-all duration-200 hover:shadow-md hover:scale-105 active:scale-95 whitespace-nowrap cursor-pointer shadow-xs"
                         >
                           <span>Inquire</span>
-                          <ArrowRight className="w-3 h-3" />
+                          <ArrowRight className="w-3 h-3 transition-transform duration-200 group-hover:translate-x-0.5" />
                         </button>
                       </div>
 

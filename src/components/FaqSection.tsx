@@ -59,17 +59,17 @@ export const FaqSection: React.FC = () => {
                 delay={idx * 0.08}
               >
                 <div
-                  className="rounded-2xl bg-[#EFE3D5] border border-[#DFCAB4] overflow-hidden transition-colors"
+                  className="group rounded-2xl bg-[#EFE3D5] hover:bg-[#FAF4EC] border border-[#DFCAB4] hover:border-[#8C6246]/70 overflow-hidden transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5"
                 >
                   <button
                     onClick={() => setOpenIndex(isOpen ? null : idx)}
                     className="w-full p-5 sm:p-6 text-left flex items-center justify-between gap-4 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#8C6246]"
                   >
-                    <span className="font-display text-base font-bold text-[#221D1A]">
+                    <span className="font-display text-base font-bold text-[#221D1A] group-hover:text-[#8C6246] transition-colors">
                       {faq.question}
                     </span>
                     <div
-                      className={`w-7 h-7 rounded-full bg-[#FAF5EE] border border-[#DFCAB4] flex items-center justify-center shrink-0 transition-transform duration-200 ${
+                      className={`w-7 h-7 rounded-full bg-[#FAF5EE] group-hover:bg-[#EBD8C3] border border-[#DFCAB4] group-hover:border-[#8C6246] flex items-center justify-center shrink-0 transition-all duration-300 group-hover:scale-110 ${
                         isOpen ? 'rotate-180' : ''
                       }`}
                     >

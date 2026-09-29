@@ -31,17 +31,17 @@ export const TestimonialsSection: React.FC = () => {
               className="h-full"
             >
               <div
-                className="h-full rounded-2xl bg-[#EFE3D5] border border-[#DFCAB4] p-6 sm:p-7 flex flex-col justify-between hover:bg-[#E9DAC8] transition-colors"
+                className="group h-full rounded-2xl bg-[#EFE3D5] hover:bg-[#FAF4EC] border border-[#DFCAB4] hover:border-[#8C6246]/70 p-6 sm:p-7 flex flex-col justify-between transition-all duration-300 hover:shadow-xl hover:-translate-y-1.5"
               >
                 <div>
                   {/* Rating & Quote Icon */}
                   <div className="flex items-center justify-between mb-4">
-                    <div className="flex items-center gap-1 text-[#E58A1F]">
+                    <div className="flex items-center gap-1 text-[#E58A1F] transition-transform duration-300 group-hover:scale-105">
                       {[...Array(t.rating)].map((_, i) => (
                         <Star key={i} className="w-4 h-4 fill-current" />
                       ))}
                     </div>
-                    <Quote className="w-5 h-5 text-[#8C6246]/40" />
+                    <Quote className="w-5 h-5 text-[#8C6246]/40 group-hover:text-[#8C6246] transition-all duration-300 group-hover:scale-110" />
                   </div>
 
                   <p className="text-xs sm:text-sm text-[#3E3229] leading-relaxed italic">
@@ -49,8 +49,8 @@ export const TestimonialsSection: React.FC = () => {
                   </p>
                 </div>
 
-                <div className="mt-6 pt-4 border-t border-[#DFCAB4]">
-                  <div className="text-sm font-bold text-[#221D1A]">
+                <div className="mt-6 pt-4 border-t border-[#DFCAB4] group-hover:border-[#D5C0AB] transition-colors">
+                  <div className="text-sm font-bold text-[#221D1A] group-hover:text-[#8C6246] transition-colors">
                     {t.author}
                   </div>
                   <div className="text-xs text-[#6B5A4D]">

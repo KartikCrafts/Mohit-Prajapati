@@ -16,15 +16,15 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onOpenBooking }) => 
           {/* Left: Mohit Prajapati Profile & Logo Card (5 cols) */}
           <div className="lg:col-span-5">
             <ScrollReveal direction="right" delay={0.1}>
-              <div className="rounded-3xl bg-[#EFE3D5] border border-[#DFCAB4] p-7 sm:p-9 shadow-md space-y-6">
+              <div className="group rounded-3xl bg-[#EFE3D5] hover:bg-[#FAF4EC] border border-[#DFCAB4] hover:border-[#8C6246]/70 p-7 sm:p-9 shadow-md hover:shadow-2xl transition-all duration-500 space-y-6">
                 
                 <div className="flex items-center gap-4">
                   {/* Square Logo Container with object-contain */}
-                  <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl overflow-hidden border border-[#D9BEA7] bg-[#FAF5EE] p-1.5 shadow-sm shrink-0 flex items-center justify-center">
+                  <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl overflow-hidden border border-[#D9BEA7] group-hover:border-[#8C6246] bg-[#FAF5EE] p-1.5 shadow-sm shrink-0 flex items-center justify-center transition-all duration-300 group-hover:scale-105">
                     <img
                       src="/images/mohit_avatar.jpg"
                       alt="Mohit Prajapati Logo"
-                      className="w-full h-full object-contain"
+                      className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-108"
                       onError={(e) => {
                         const target = e.currentTarget;
                         if (!target.src.includes('cdn.corenexis.com')) {
@@ -36,7 +36,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onOpenBooking }) => 
                     />
                   </div>
                   <div>
-                    <h3 className="font-display text-2xl font-bold text-[#221D1A]">
+                    <h3 className="font-display text-2xl font-bold text-[#221D1A] group-hover:text-[#8C6246] transition-colors">
                       Mohit Prajapati
                     </h3>
                     <p className="text-xs font-semibold text-[#8C6246] mt-0.5">
@@ -48,16 +48,16 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onOpenBooking }) => 
                   </div>
                 </div>
 
-                <div className="p-4 rounded-xl bg-[#FAF5EE] border border-[#E4D5C5] space-y-2.5 text-xs text-[#4E4137]">
-                  <div className="flex items-center gap-2.5">
+                <div className="p-4 rounded-xl bg-[#FAF5EE] group-hover:bg-[#FFFDF9] border border-[#E4D5C5] group-hover:border-[#D5C0AB] space-y-2.5 text-xs text-[#4E4137] transition-all duration-300">
+                  <div className="flex items-center gap-2.5 transition-transform duration-200 hover:translate-x-1">
                     <Mail className="w-4 h-4 text-[#8C6246] shrink-0" />
                     <span className="font-mono text-[#221D1A]">mohit.prajapati@techstudio.dev</span>
                   </div>
-                  <div className="flex items-center gap-2.5">
+                  <div className="flex items-center gap-2.5 transition-transform duration-200 hover:translate-x-1">
                     <Phone className="w-4 h-4 text-[#8C6246] shrink-0" />
                     <span className="font-mono text-[#221D1A]">+91 98765 43210</span>
                   </div>
-                  <div className="flex items-center gap-2.5">
+                  <div className="flex items-center gap-2.5 transition-transform duration-200 hover:translate-x-1">
                     <MapPin className="w-4 h-4 text-[#8C6246] shrink-0" />
                     <span>Remote Client Engagements Worldwide (IST / EST / GMT)</span>
                   </div>
@@ -65,15 +65,15 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onOpenBooking }) => 
 
                 {/* Guarantees */}
                 <div className="space-y-2 text-xs text-[#3E3229]">
-                  <div className="flex items-center gap-2">
+                  <div className="flex items-center gap-2 transition-transform duration-200 hover:translate-x-1">
                     <Check className="w-4 h-4 text-[#2E7D32] shrink-0" />
                     <span>Zero outsourcing — Mohit writes and reviews all work</span>
                   </div>
-                  <div className="flex items-center gap-2">
+                  <div className="flex items-center gap-2 transition-transform duration-200 hover:translate-x-1">
                     <Check className="w-4 h-4 text-[#2E7D32] shrink-0" />
                     <span>100% Full Intellectual Property & Source Handover</span>
                   </div>
-                  <div className="flex items-center gap-2">
+                  <div className="flex items-center gap-2 transition-transform duration-200 hover:translate-x-1">
                     <Check className="w-4 h-4 text-[#2E7D32] shrink-0" />
                     <span>Guaranteed post-delivery bug fix warranty</span>
                   </div>
@@ -81,7 +81,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onOpenBooking }) => 
 
                 <button
                   onClick={onOpenBooking}
-                  className="w-full py-3 px-4 text-xs font-semibold text-white bg-[#2A1F18] hover:bg-[#3D2E24] rounded-xl shadow-xs transition-colors cursor-pointer"
+                  className="w-full py-3.5 px-4 text-xs font-semibold text-white bg-[#2A1F18] hover:bg-[#8C6246] rounded-xl shadow-md hover:shadow-xl transition-all duration-300 hover:scale-[1.01] active:scale-[0.98] cursor-pointer"
                 >
                   Schedule Direct 1-on-1 Call
                 </button>
@@ -117,21 +117,21 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onOpenBooking }) => 
 
               {/* Core Values Bento Grid */}
               <div className="pt-6 grid grid-cols-1 sm:grid-cols-3 gap-4">
-                <div className="p-4 rounded-xl bg-[#EFE3D5] border border-[#DFCAB4]">
-                  <Shield className="w-5 h-5 text-[#8C6246] mb-2" />
-                  <h4 className="text-xs font-bold text-[#221D1A]">Clean Architecture</h4>
+                <div className="group/bento p-4 rounded-xl bg-[#EFE3D5] hover:bg-[#FAF4EC] border border-[#DFCAB4] hover:border-[#8C6246]/70 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+                  <Shield className="w-5 h-5 text-[#8C6246] mb-2 transition-transform duration-300 group-hover/bento:scale-110 group-hover/bento:rotate-6" />
+                  <h4 className="text-xs font-bold text-[#221D1A] group-hover/bento:text-[#8C6246] transition-colors">Clean Architecture</h4>
                   <p className="text-[11px] text-[#635346] mt-1">Modular, well-commented, scalable codebases.</p>
                 </div>
 
-                <div className="p-4 rounded-xl bg-[#EFE3D5] border border-[#DFCAB4]">
-                  <Clock className="w-5 h-5 text-[#8C6246] mb-2" />
-                  <h4 className="text-xs font-bold text-[#221D1A]">Punctual Delivery</h4>
+                <div className="group/bento p-4 rounded-xl bg-[#EFE3D5] hover:bg-[#FAF4EC] border border-[#DFCAB4] hover:border-[#8C6246]/70 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+                  <Clock className="w-5 h-5 text-[#8C6246] mb-2 transition-transform duration-300 group-hover/bento:scale-110 group-hover/bento:rotate-6" />
+                  <h4 className="text-xs font-bold text-[#221D1A] group-hover/bento:text-[#8C6246] transition-colors">Punctual Delivery</h4>
                   <p className="text-[11px] text-[#635346] mt-1">99% on-time milestone delivery track record.</p>
                 </div>
 
-                <div className="p-4 rounded-xl bg-[#EFE3D5] border border-[#DFCAB4]">
-                  <HeartHandshake className="w-5 h-5 text-[#8C6246] mb-2" />
-                  <h4 className="text-xs font-bold text-[#221D1A]">Transparent Rates</h4>
+                <div className="group/bento p-4 rounded-xl bg-[#EFE3D5] hover:bg-[#FAF4EC] border border-[#DFCAB4] hover:border-[#8C6246]/70 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+                  <HeartHandshake className="w-5 h-5 text-[#8C6246] mb-2 transition-transform duration-300 group-hover/bento:scale-110 group-hover/bento:rotate-6" />
+                  <h4 className="text-xs font-bold text-[#221D1A] group-hover/bento:text-[#8C6246] transition-colors">Transparent Rates</h4>
                   <p className="text-[11px] text-[#635346] mt-1">Clear milestone pricing without surprise fees.</p>
                 </div>
               </div>

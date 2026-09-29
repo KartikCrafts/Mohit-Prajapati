@@ -52,15 +52,15 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking }) => {
               <div className="pt-2 flex flex-wrap items-center gap-3.5">
                 <button
                   onClick={onOpenBooking}
-                  className="flex items-center justify-center gap-2.5 px-6 py-3.5 text-sm font-semibold text-white bg-[#2A1F18] hover:bg-[#3D2E24] rounded-xl transition-all shadow-md hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2A1F18] whitespace-nowrap cursor-pointer"
+                  className="flex items-center justify-center gap-2.5 px-6 py-3.5 text-sm font-semibold text-white bg-[#2A1F18] hover:bg-[#3D2E24] rounded-xl transition-all duration-300 shadow-md hover:shadow-xl hover:-translate-y-0.5 hover:scale-[1.01] active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2A1F18] whitespace-nowrap cursor-pointer"
                 >
                   <span>Book a Discovery Consultation</span>
-                  <ArrowRight className="w-4 h-4" />
+                  <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
                 </button>
 
                 <a
                   href="#services"
-                  className="flex items-center justify-center gap-2 px-5 py-3.5 text-sm font-semibold text-[#2A1F18] bg-[#EDE0D1] hover:bg-[#E5D4C2] border border-[#D5C1AE] rounded-xl transition-colors whitespace-nowrap"
+                  className="flex items-center justify-center gap-2 px-5 py-3.5 text-sm font-semibold text-[#2A1F18] bg-[#EDE0D1] hover:bg-[#E5D4C2] border border-[#D5C1AE] hover:border-[#8C6246]/50 rounded-xl transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md whitespace-nowrap"
                 >
                   <span>Explore 28+ Services</span>
                 </a>
@@ -69,7 +69,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking }) => {
                   href="https://wa.me/919876543210?text=Hi%20Mohit,%20I%20am%20interested%20in%20your%20services."
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-center gap-2 px-4 py-3.5 text-sm font-medium text-[#2E7D32] hover:text-[#1B5E20] hover:bg-[#E8DCCF]/50 rounded-xl transition-colors whitespace-nowrap"
+                  className="flex items-center justify-center gap-2 px-4 py-3.5 text-sm font-medium text-[#2E7D32] hover:text-[#1B5E20] hover:bg-[#E8DCCF]/70 rounded-xl transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xs whitespace-nowrap"
                   aria-label="Direct WhatsApp Message"
                 >
                   <MessageSquare className="w-4 h-4 text-[#2E7D32]" />
@@ -80,16 +80,16 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking }) => {
 
             {/* Trust points / Guarantees */}
             <ScrollReveal direction="up" delay={0.45}>
-              <div className="pt-4 border-t border-[#E5D7C9] grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs font-medium text-[#574A40]">
-                <div className="flex items-center gap-2">
+              <div className="pt-4 border-t border-[#E5D7C9] grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs font-medium text-[#574A40]">
+                <div className="flex items-center gap-2 p-2 rounded-lg transition-all duration-200 hover:bg-[#EBD8C3]/50 hover:translate-x-0.5">
                   <CheckCircle2 className="w-4 h-4 text-[#8C6246] shrink-0" />
                   <span>100% Clean Code & Ownership</span>
                 </div>
-                <div className="flex items-center gap-2">
+                <div className="flex items-center gap-2 p-2 rounded-lg transition-all duration-200 hover:bg-[#EBD8C3]/50 hover:translate-x-0.5">
                   <ShieldCheck className="w-4 h-4 text-[#8C6246] shrink-0" />
                   <span>On-Time Milestone Delivery</span>
                 </div>
-                <div className="flex items-center gap-2">
+                <div className="flex items-center gap-2 p-2 rounded-lg transition-all duration-200 hover:bg-[#EBD8C3]/50 hover:translate-x-0.5">
                   <Zap className="w-4 h-4 text-[#8C6246] shrink-0" />
                   <span>Direct Access to Mohit</span>
                 </div>
@@ -101,14 +101,14 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking }) => {
           {/* Right Column: Hero Visual Carrier with Skin-Toned Frame (5 cols) */}
           <div className="lg:col-span-5 relative">
             <ScrollReveal direction="left" delay={0.25} duration={0.65}>
-              {/* Skin-tone card container */}
-              <div className="relative rounded-2xl bg-[#EFE3D5] p-3 border border-[#DFCAB4] shadow-xl">
+              {/* Skin-tone card container with hover lift & shadow */}
+              <div className="group relative rounded-2xl bg-[#EFE3D5] p-3 border border-[#DFCAB4] shadow-xl transition-all duration-500 hover:shadow-2xl hover:border-[#8C6246]/70 hover:-translate-y-1">
                 
                 <div className="relative aspect-4/3 sm:aspect-16/10 rounded-xl overflow-hidden bg-[#E2D2C0]">
                   <img
                     src={heroWorkspaceImg}
                     alt="Mohit Prajapati Engineering & Design Studio"
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-106 group-hover:brightness-105"
                     loading="eager"
                     decoding="async"
                     onError={(e) => {
@@ -119,11 +119,12 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking }) => {
                   />
                   
                   {/* Measured contrast scrim */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#221D1A]/80 via-transparent to-transparent pointer-events-none" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#221D1A]/85 via-[#221D1A]/20 to-transparent pointer-events-none transition-opacity duration-500 group-hover:opacity-90" />
 
                   {/* Overlaid caption inside the image */}
-                  <div className="absolute bottom-3 left-4 right-4 text-white">
-                    <p className="text-xs uppercase tracking-wider text-[#E5D3BE] font-semibold">
+                  <div className="absolute bottom-3 left-4 right-4 text-white transform transition-transform duration-500 group-hover:translate-y-[-2px]">
+                    <p className="text-xs uppercase tracking-wider text-[#E5D3BE] font-semibold flex items-center gap-1.5">
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#E5D3BE] inline-block animate-pulse" />
                       Studio Workflow & Delivery
                     </p>
                     <p className="text-sm font-medium text-white/95 mt-0.5">
@@ -133,8 +134,8 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking }) => {
                 </div>
 
                 {/* Stat card embedded inside skin container */}
-                <div className="mt-3 grid grid-cols-3 gap-2 text-center p-3 rounded-lg bg-[#FAF5EE] border border-[#E6D7C8]">
-                  <div>
+                <div className="mt-3 grid grid-cols-3 gap-2 text-center p-3 rounded-lg bg-[#FAF5EE] border border-[#E6D7C8] transition-colors duration-300 group-hover:border-[#D5C0AB]">
+                  <div className="p-1 rounded-md transition-all duration-200 hover:bg-[#F2E5D7] hover:scale-105">
                     <div className="font-display text-xl sm:text-2xl font-bold text-[#221D1A] tabular-nums">
                       85+
                     </div>
@@ -143,7 +144,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking }) => {
                     </div>
                   </div>
 
-                  <div className="border-x border-[#EADCCF]">
+                  <div className="border-x border-[#EADCCF] p-1 rounded-md transition-all duration-200 hover:bg-[#F2E5D7] hover:scale-105">
                     <div className="font-display text-xl sm:text-2xl font-bold text-[#221D1A] tabular-nums">
                       99%
                     </div>
@@ -152,7 +153,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking }) => {
                     </div>
                   </div>
 
-                  <div>
+                  <div className="p-1 rounded-md transition-all duration-200 hover:bg-[#F2E5D7] hover:scale-105">
                     <div className="font-display text-xl sm:text-2xl font-bold text-[#221D1A] tabular-nums">
                       4.9 / 5
                     </div>
@@ -165,8 +166,8 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking }) => {
               </div>
 
               {/* Floating verification badge */}
-              <div className="hidden sm:flex absolute -bottom-5 -left-5 bg-[#FAF5EE] border border-[#DFCAB4] rounded-xl px-4 py-2.5 shadow-lg items-center gap-3 max-w-xs">
-                <div className="w-8 h-8 rounded-full bg-[#E5D3BE] flex items-center justify-center shrink-0 text-[#221D1A]">
+              <div className="group/badge hidden sm:flex absolute -bottom-5 -left-5 bg-[#FAF5EE] border border-[#DFCAB4] rounded-xl px-4 py-2.5 shadow-lg items-center gap-3 max-w-xs transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:border-[#8C6246] hover:bg-[#FFFDF9] cursor-default">
+                <div className="w-8 h-8 rounded-full bg-[#E5D3BE] flex items-center justify-center shrink-0 text-[#221D1A] transition-transform duration-300 group-hover/badge:scale-110 group-hover/badge:bg-[#DFCAB4]">
                   <BadgeCheck className="w-4 h-4 text-[#8C6246]" />
                 </div>
                 <div className="text-xs">
