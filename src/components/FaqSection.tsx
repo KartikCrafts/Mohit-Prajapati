@@ -31,7 +31,7 @@ const FAQS: FaqItem[] = [
 ];
 
 export const FaqSection: React.FC = () => {
-  const [openIndex, setOpenIndex] = useState<number | null>(0);
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
     <section className="py-20 bg-[#FAF7F2] border-t border-[#E8DCCF]">
@@ -59,10 +59,15 @@ export const FaqSection: React.FC = () => {
                 delay={idx * 0.08}
               >
                 <div
+                  onMouseEnter={() => setOpenIndex(idx)}
+                  onMouseLeave={() => setOpenIndex(null)}
                   className="group rounded-2xl bg-[#EFE3D5] hover:bg-[#FAF4EC] border border-[#DFCAB4] hover:border-[#8C6246]/70 overflow-hidden transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5"
                 >
                   <button
                     onClick={() => setOpenIndex(isOpen ? null : idx)}
+                    onFocus={() => setOpenIndex(idx)}
+                    onBlur={() => setOpenIndex(null)}
+                    aria-expanded={isOpen}
                     className="w-full p-5 sm:p-6 text-left flex items-center justify-between gap-4 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#8C6246]"
                   >
                     <span className="font-display text-base font-bold text-[#221D1A] group-hover:text-[#8C6246] transition-colors">
@@ -70,18 +75,25 @@ export const FaqSection: React.FC = () => {
                     </span>
                     <div
                       className={`w-7 h-7 rounded-full bg-[#FAF5EE] group-hover:bg-[#EBD8C3] border border-[#DFCAB4] group-hover:border-[#8C6246] flex items-center justify-center shrink-0 transition-all duration-300 group-hover:scale-110 ${
-                        isOpen ? 'rotate-180' : ''
+                        isOpen ? 'rotate-180 bg-[#EBD8C3] border-[#8C6246]' : ''
                       }`}
                     >
                       <ChevronDown className="w-4 h-4 text-[#8C6246]" />
                     </div>
                   </button>
 
-                  {isOpen && (
-                    <div className="px-5 pb-5 sm:px-6 sm:pb-6 text-xs sm:text-sm text-[#4E4137] leading-relaxed border-t border-[#DFCAB4]/60 pt-4">
-                      {faq.answer}
+                  {/* Smooth height-transition answer drawer */}
+                  <div
+                    className={`grid transition-all duration-300 ease-in-out ${
+                      isOpen ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'
+                    }`}
+                  >
+                    <div className="overflow-hidden">
+                      <div className="px-5 pb-5 sm:px-6 sm:pb-6 text-xs sm:text-sm text-[#4E4137] leading-relaxed border-t border-[#DFCAB4]/60 pt-4">
+                        {faq.answer}
+                      </div>
                     </div>
-                  )}
+                  </div>
                 </div>
               </ScrollReveal>
             );
