@@ -22,13 +22,16 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onOpenBooking }) => 
                   {/* Square Logo Container with object-contain */}
                   <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl overflow-hidden border border-[#D9BEA7] bg-[#FAF5EE] p-1.5 shadow-sm shrink-0 flex items-center justify-center">
                     <img
-                      src="https://cdn.corenexis.com/f/q5jlpZ52kah.jpeg"
+                      src="/images/mohit_avatar.jpg"
                       alt="Mohit Prajapati Logo"
-                      referrerPolicy="no-referrer"
                       className="w-full h-full object-contain"
                       onError={(e) => {
                         const target = e.currentTarget;
-                        target.style.display = 'none';
+                        if (!target.src.includes('cdn.corenexis.com')) {
+                          target.src = 'https://cdn.corenexis.com/f/q5jlpZ52kah.jpeg';
+                        } else {
+                          target.style.display = 'none';
+                        }
                       }}
                     />
                   </div>

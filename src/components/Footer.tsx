@@ -20,10 +20,15 @@ export const Footer: React.FC = () => {
                 {/* Square Logo container with object-contain */}
                 <div className="w-12 h-12 rounded-xl overflow-hidden border border-[#5A4537] bg-[#3B2C23] p-1 shrink-0 flex items-center justify-center">
                   <img
-                    src="https://cdn.corenexis.com/f/q5jlpZ52kah.jpeg"
+                    src="/images/mohit_avatar.jpg"
                     alt="Mohit Prajapati Logo"
-                    referrerPolicy="no-referrer"
                     className="w-full h-full object-contain"
+                    onError={(e) => {
+                      const target = e.currentTarget;
+                      if (!target.src.includes('cdn.corenexis.com')) {
+                        target.src = 'https://cdn.corenexis.com/f/q5jlpZ52kah.jpeg';
+                      }
+                    }}
                   />
                 </div>
                 <div>

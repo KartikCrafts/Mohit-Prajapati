@@ -21,7 +21,7 @@ export const CASE_STUDIES: CaseStudy[] = [
       { label: 'Weekly administrative hours saved', value: '28 hrs' },
       { label: 'System uptime over 12 months', value: '99.98%' }
     ],
-    image: '/src/assets/images/hero_workspace_consulting_1790611829034.jpg',
+    image: '/images/hero_workspace_consulting_1790611829034.jpg',
     tags: ['React', 'Node.js', 'PostgreSQL', 'Tailwind']
   },
   {
@@ -35,7 +35,7 @@ export const CASE_STUDIES: CaseStudy[] = [
       { label: 'Manual spreadsheet reporting eliminated', value: '18 hrs/wk' },
       { label: 'Gross margin leakage identified', value: '$42,000+' }
     ],
-    image: '/src/assets/images/analytics_dashboard_preview_1790611844747.jpg',
+    image: '/images/analytics_dashboard_preview_1790611844747.jpg',
     tags: ['Power BI', 'SQL', 'DAX', 'Data Cleaning']
   },
   {
@@ -49,7 +49,7 @@ export const CASE_STUDIES: CaseStudy[] = [
       { label: 'Figma component library tokens', value: '180+ Assets' },
       { label: 'Developer implementation sprint time', value: '-35%' }
     ],
-    image: '/src/assets/images/design_uiux_mockup_1790611859401.jpg',
+    image: '/images/design_uiux_mockup_1790611859401.jpg',
     tags: ['Figma', 'UI/UX', 'Design System', 'Prototyping']
   }
 ];

@@ -1,6 +1,7 @@
 import React from 'react';
 import { ArrowRight, MessageSquare, CheckCircle2, ShieldCheck, Zap, BadgeCheck } from 'lucide-react';
 import { ScrollReveal } from './ScrollReveal';
+import heroWorkspaceImg from '../assets/images/hero_workspace_consulting_1790611829034.jpg';
 
 interface HeroProps {
   onOpenBooking: () => void;
@@ -105,10 +106,16 @@ export const Hero: React.FC<HeroProps> = ({ onOpenBooking }) => {
                 
                 <div className="relative aspect-4/3 sm:aspect-16/10 rounded-xl overflow-hidden bg-[#E2D2C0]">
                   <img
-                    src="/src/assets/images/hero_workspace_consulting_1790611829034.jpg"
+                    src={heroWorkspaceImg}
                     alt="Mohit Prajapati Engineering & Design Studio"
-                    referrerPolicy="no-referrer"
                     className="w-full h-full object-cover"
+                    loading="eager"
+                    decoding="async"
+                    onError={(e) => {
+                      const target = e.currentTarget;
+                      target.onerror = null;
+                      target.src = '/images/hero_workspace_consulting_1790611829034.jpg';
+                    }}
                   />
                   
                   {/* Measured contrast scrim */}

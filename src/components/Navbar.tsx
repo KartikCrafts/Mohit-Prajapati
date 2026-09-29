@@ -20,16 +20,19 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
         >
           <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg border border-[#D9BEA7] bg-[#FAF5EE] p-0.5 sm:p-1 shrink-0 shadow-2xs flex items-center justify-center overflow-hidden transition-all duration-300 group-hover:border-[#8C6246]">
             <img 
-              src="https://cdn.corenexis.com/f/q5jlpZ52kah.jpeg" 
+              src="/images/mohit_avatar.jpg" 
               alt="SKILLORA Logo" 
-              referrerPolicy="no-referrer"
               className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300"
               onError={(e) => {
                 const target = e.currentTarget;
-                target.style.display = 'none';
-                const parent = target.parentElement;
-                if (parent) {
-                  parent.innerHTML = '<span class="font-bold text-[#3E2D22] text-xs">SK</span>';
+                if (!target.src.includes('cdn.corenexis.com')) {
+                  target.src = 'https://cdn.corenexis.com/f/q5jlpZ52kah.jpeg';
+                } else {
+                  target.style.display = 'none';
+                  const parent = target.parentElement;
+                  if (parent) {
+                    parent.innerHTML = '<span class="font-bold text-[#3E2D22] text-xs">SK</span>';
+                  }
                 }
               }}
             />
